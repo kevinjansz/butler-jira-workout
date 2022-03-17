@@ -35,6 +35,9 @@ pipeline {
          }
 
          stage('deploy to prod') {
+             when {
+                branch 'master'
+             }              
              steps {
                  echo 'Deploying...'
              }
