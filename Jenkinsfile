@@ -28,12 +28,6 @@ pipeline {
              }
          }
 
-         stage('deploy to prod-clone') {
-             steps {
-                 echo 'Deploying to PROD CLONE ...'
-             }
-         }
-
          stage('deploy to prod') {
              when {
                 branch 'master'
