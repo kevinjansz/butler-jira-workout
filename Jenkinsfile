@@ -27,7 +27,13 @@ pipeline {
                  echo 'Deploying...'
              }
          }
-         
+
+         stage('deploy to prod-clone') {
+             steps {
+                 echo 'Deploying to PROD CLONE ...'
+             }
+         }
+
          stage('deploy to prod') {
              steps {
                  echo 'Deploying...'
