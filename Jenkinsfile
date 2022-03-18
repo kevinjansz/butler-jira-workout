@@ -9,6 +9,12 @@ pipeline {
                  echo 'Building...'
              }
          }
+          
+         stage('deploy to dev') {
+             steps {
+                 echo 'Deploying to DEV .....'
+             }
+         }
 
          stage('deploy to test') {
              steps {
@@ -21,8 +27,11 @@ pipeline {
                  echo 'Deploying...'
              }
          }
-         
+
          stage('deploy to prod') {
+             when {
+                branch 'master'
+             }              
              steps {
                  echo 'Deploying...'
              }
